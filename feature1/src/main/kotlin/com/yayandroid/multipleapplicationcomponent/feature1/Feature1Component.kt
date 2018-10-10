@@ -1,10 +1,10 @@
-package com.yayandroid.polycomponentsample.feature1
+package com.yayandroid.multipleapplicationcomponent.feature1
 
 import android.app.Activity
-import com.yayandroid.polycomponentsample.base.BaseSampleApplication
-import com.yayandroid.polycomponentsample.base.CoreApplicationComponent
-import com.yayandroid.polycomponentsample.base.FeatureApplicationComponent
-import com.yayandroid.polycomponentsample.base.di.SampleCoreComponent
+import com.yayandroid.multipleapplicationcomponent.base.BaseSampleApplication
+import com.yayandroid.multipleapplicationcomponent.base.CoreApplicationComponent
+import com.yayandroid.multipleapplicationcomponent.base.FeatureApplicationComponent
+import com.yayandroid.multipleapplicationcomponent.base.di.SampleCoreComponent
 import dagger.Component
 
 @Feature1Scope

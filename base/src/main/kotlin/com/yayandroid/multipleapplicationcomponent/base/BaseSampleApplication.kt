@@ -1,7 +1,7 @@
-package com.yayandroid.polycomponentsample.base
+package com.yayandroid.multipleapplicationcomponent.base
 
 import android.app.Application
-import com.yayandroid.polycomponentsample.base.di.DaggerSampleCoreComponent
+import com.yayandroid.multipleapplicationcomponent.base.di.DaggerSampleCoreComponent
 
 abstract class BaseSampleApplication : Application() {
 

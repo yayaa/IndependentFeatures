@@ -1,4 +1,4 @@
-package com.yayandroid.polycomponentsample.feature2
+package com.yayandroid.multipleapplicationcomponent.feature2
 
 import javax.inject.Scope
 

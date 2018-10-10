@@ -1,4 +1,4 @@
-package com.yayandroid.polycomponentsample.base
+package com.yayandroid.multipleapplicationcomponent.base
 
 interface ApplicationComponent
 
