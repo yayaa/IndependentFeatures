@@ -1,3 +1,10 @@
+apply plugin: 'com.android.feature'
+apply from: '../config.gradle'
+
+android {
+    baseFeature true
+}
+
 dependencies {
     api libraries.dagger
 }

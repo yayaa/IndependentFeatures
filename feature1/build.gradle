@@ -1,3 +1,6 @@
+apply plugin: 'com.android.feature'
+apply from: '../config.gradle'
+
 dependencies {
     implementation project(":base")
 }

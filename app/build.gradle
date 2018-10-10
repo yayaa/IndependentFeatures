@@ -1,3 +1,12 @@
+apply plugin: 'com.android.application'
+apply from: '../config.gradle'
+
+android {
+    defaultConfig {
+        applicationId "com.yayandroid.multipleapplicationcomponent"
+    }
+}
+
 dependencies {
     implementation project(":base")
     implementation project(":feature1")
