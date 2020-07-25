@@ -3,7 +3,7 @@ apply from: '../config.gradle'
 
 android {
     defaultConfig {
-        applicationId "com.yayandroid.multipleapplicationcomponent"
+        applicationId "com.yayandroid.independentfeatures"
     }
 }
 

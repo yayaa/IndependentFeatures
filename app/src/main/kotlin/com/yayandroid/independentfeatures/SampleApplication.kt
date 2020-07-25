@@ -1,9 +1,9 @@
-package com.yayandroid.multipleapplicationcomponent
+package com.yayandroid.independentfeatures
 
-import com.yayandroid.multipleapplicationcomponent.base.BaseSampleApplication
-import com.yayandroid.multipleapplicationcomponent.base.FeatureApplicationComponent
-import com.yayandroid.multipleapplicationcomponent.feature1.Feature1Component
-import com.yayandroid.multipleapplicationcomponent.feature2.Feature2Component
+import com.yayandroid.independentfeatures.base.BaseSampleApplication
+import com.yayandroid.independentfeatures.base.FeatureApplicationComponent
+import com.yayandroid.independentfeatures.feature1.Feature1Component
+import com.yayandroid.independentfeatures.feature2.Feature2Component
 
 class SampleApplication : BaseSampleApplication() {
 

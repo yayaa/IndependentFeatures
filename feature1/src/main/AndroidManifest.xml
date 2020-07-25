@@ -1,9 +1,9 @@
-<manifest package="com.yayandroid.multipleapplicationcomponent.feature1"
+<manifest package="com.yayandroid.independentfeatures.feature1"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
     <application>
-        <activity android:name=".Feature1Activity">
+        <activity android:name="com.yayandroid.independentfeatures.feature1.Feature1Activity">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
 

@@ -1,4 +1,4 @@
-package com.yayandroid.multipleapplicationcomponent.base
+package com.yayandroid.independentfeatures.base
 
 import android.util.Log
 

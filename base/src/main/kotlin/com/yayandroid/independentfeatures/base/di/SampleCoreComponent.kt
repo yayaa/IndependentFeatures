@@ -1,8 +1,8 @@
-package com.yayandroid.multipleapplicationcomponent.base.di
+package com.yayandroid.independentfeatures.base.di
 
 import android.app.Application
-import com.yayandroid.multipleapplicationcomponent.base.CoreApplicationComponent
-import com.yayandroid.multipleapplicationcomponent.base.SampleCoreLogger
+import com.yayandroid.independentfeatures.base.CoreApplicationComponent
+import com.yayandroid.independentfeatures.base.SampleCoreLogger
 import dagger.BindsInstance
 import dagger.Component
 

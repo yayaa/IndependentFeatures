@@ -1,9 +1,9 @@
-package com.yayandroid.multipleapplicationcomponent.feature1
+package com.yayandroid.independentfeatures.feature1
 
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.widget.TextView
-import com.yayandroid.multipleapplicationcomponent.base.SampleCoreLogger
+import com.yayandroid.independentfeatures.base.SampleCoreLogger
 import javax.inject.Inject
 
 class Feature1Activity : AppCompatActivity() {
