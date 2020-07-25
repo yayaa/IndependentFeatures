@@ -3,7 +3,9 @@
     package="com.yayandroid.independentfeatures.feature1">
 
     <application>
-        <activity android:name="com.yayandroid.independentfeatures.feature1.Feature1Activity">
+        <activity
+            android:name="com.yayandroid.independentfeatures.feature1.Feature1Activity"
+            android:label="Feature 1">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
 
