@@ -5,6 +5,11 @@ import com.yayandroid.independentfeatures.base.FeatureApplicationComponent
 import com.yayandroid.independentfeatures.feature1.Feature1Component
 import com.yayandroid.independentfeatures.feature2.Feature2Component
 
+/**
+ * Application to create all the ApplicationComponents and store keep instances.
+ * Overrides the methods defined in BaseSampleApplication
+ * to return feature component implementations.
+ */
 class SampleApplication : BaseSampleApplication() {
 
     private val feature1component: Feature1Component by lazy {

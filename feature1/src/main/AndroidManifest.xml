@@ -11,8 +11,7 @@
                 <category android:name="android.intent.category.DEFAULT" />
 
                 <data
-                    android:host=""
-                    android:path="/feature1"
+                    android:host="feature1"
                     android:scheme="sample"
                     tools:ignore="AppLinkUrlError" />
             </intent-filter>

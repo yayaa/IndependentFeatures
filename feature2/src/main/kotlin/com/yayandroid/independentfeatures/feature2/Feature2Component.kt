@@ -4,11 +4,11 @@ import android.app.Activity
 import com.yayandroid.independentfeatures.base.BaseSampleApplication
 import com.yayandroid.independentfeatures.base.CoreApplicationComponent
 import com.yayandroid.independentfeatures.base.FeatureApplicationComponent
-import com.yayandroid.independentfeatures.base.di.SampleCoreComponent
+import com.yayandroid.independentfeatures.base.SampleCoreComponent
 import dagger.Component
 
 @Feature2Scope
-@Component(dependencies = arrayOf(SampleCoreComponent::class))
+@Component(dependencies = [SampleCoreComponent::class])
 interface Feature2Component : FeatureApplicationComponent {
 
     companion object {

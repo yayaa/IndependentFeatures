@@ -3,13 +3,21 @@ package com.yayandroid.independentfeatures
 import android.app.Activity
 import com.yayandroid.independentfeatures.base.CoreApplicationComponent
 import com.yayandroid.independentfeatures.base.FeatureApplicationComponent
-import com.yayandroid.independentfeatures.base.di.ActivityScope
-import com.yayandroid.independentfeatures.base.di.SampleCoreComponent
+import com.yayandroid.independentfeatures.base.ActivityScope
+import com.yayandroid.independentfeatures.base.SampleCoreComponent
+import com.yayandroid.independentfeatures.feature1.Feature1ModuleToApplication
+import com.yayandroid.independentfeatures.feature2.Feature2ModuleToApplication
 import dagger.Component
 
 @ActivityScope
-@Component(dependencies = arrayOf(SampleCoreComponent::class))
-abstract class MainComponent : FeatureApplicationComponent{
+@Component(
+        modules = [
+            Feature1ModuleToApplication::class,
+            Feature2ModuleToApplication::class
+        ],
+        dependencies = [SampleCoreComponent::class]
+)
+abstract class MainComponent : FeatureApplicationComponent {
 
     companion object {
         fun create(coreComponent: CoreApplicationComponent): MainComponent = DaggerMainComponent.builder()

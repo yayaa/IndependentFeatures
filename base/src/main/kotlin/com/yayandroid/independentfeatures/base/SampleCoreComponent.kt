@@ -1,13 +1,11 @@
-package com.yayandroid.independentfeatures.base.di
+package com.yayandroid.independentfeatures.base
 
 import android.app.Application
-import com.yayandroid.independentfeatures.base.CoreApplicationComponent
-import com.yayandroid.independentfeatures.base.SampleCoreLogger
 import dagger.BindsInstance
 import dagger.Component
 
 @CoreScope
-@Component(modules = arrayOf(SampleCoreModule::class))
+@Component(modules = [SampleCoreModule::class])
 interface SampleCoreComponent : CoreApplicationComponent {
 
     @Component.Builder

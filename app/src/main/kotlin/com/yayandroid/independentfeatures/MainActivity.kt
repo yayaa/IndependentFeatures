@@ -3,15 +3,19 @@ package com.yayandroid.independentfeatures
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
-import android.support.v7.app.AppCompatActivity
-import android.widget.Button
-import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import com.yayandroid.independentfeatures.base.Feature
 import com.yayandroid.independentfeatures.base.SampleCoreLogger
 import javax.inject.Inject
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity(), FeatureAdapter.FeatureClickListener {
 
+    @Inject lateinit var features: Set<Feature>
     @Inject lateinit var sampleCoreLogger: SampleCoreLogger
+
+    private val featureAdapter = FeatureAdapter(this)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -21,22 +25,19 @@ class MainActivity : AppCompatActivity() {
         mainComponent.inject(this)
         sampleCoreLogger.logSelf()
 
-        findViewById<TextView>(R.id.sampleTextView).apply {
-            text = "Component: \n ${sampleCoreLogger.string(mainComponent)}"
+        featureAdapter.setFeatures(features)
+        findViewById<RecyclerView>(R.id.main_recycler).apply {
+            setHasFixedSize(true)
+            layoutManager = LinearLayoutManager(this@MainActivity)
+            adapter = featureAdapter
         }
 
-        findViewById<Button>(R.id.feature1Button).apply {
-            setOnClickListener { featureClickListener("sample:///feature1") }
-        }
-
-        findViewById<Button>(R.id.feature2Button).apply {
-            setOnClickListener { featureClickListener("sample:///feature2") }
-        }
+        sampleCoreLogger.string(mainComponent)
     }
 
-    private val featureClickListener: (deeplink: String) -> Unit = { deeplink ->
+    override fun onFeatureClick(feature: Feature) {
         startActivity(Intent(Intent.ACTION_VIEW).apply {
-            data = Uri.parse(deeplink)
+            data = Uri.Builder().scheme("sample").authority(feature.deeplinkHost).build()
         })
     }
 

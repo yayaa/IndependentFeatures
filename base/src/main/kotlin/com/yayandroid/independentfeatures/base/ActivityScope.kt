@@ -1,4 +1,4 @@
-package com.yayandroid.independentfeatures.base.di
+package com.yayandroid.independentfeatures.base
 
 import javax.inject.Scope
 

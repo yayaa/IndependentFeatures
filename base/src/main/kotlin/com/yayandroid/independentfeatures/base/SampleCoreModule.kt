@@ -1,6 +1,5 @@
-package com.yayandroid.independentfeatures.base.di
+package com.yayandroid.independentfeatures.base
 
-import com.yayandroid.independentfeatures.base.SampleCoreLogger
 import dagger.Module
 import dagger.Provides
 

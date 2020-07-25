@@ -1,8 +1,8 @@
 package com.yayandroid.independentfeatures.feature1
 
 import android.os.Bundle
-import android.support.v7.app.AppCompatActivity
 import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
 import com.yayandroid.independentfeatures.base.SampleCoreLogger
 import javax.inject.Inject
 
@@ -19,7 +19,7 @@ class Feature1Activity : AppCompatActivity() {
         sampleCoreLogger.logSelf()
 
         findViewById<TextView>(R.id.sampleTextView).apply {
-            text = "Component: \n ${sampleCoreLogger.string(feature1Component)}"
+            text = "Component: \n${sampleCoreLogger.string(feature1Component)}"
         }
     }
 }

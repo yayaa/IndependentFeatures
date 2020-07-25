@@ -1,17 +1,19 @@
 ext {
     versions = [
-          minSdkVersion    : 21,
-          compileSdkVersion: 28,
-          targetSdkVersion : 28,
+            minSdkVersion    : 21,
+            compileSdkVersion: 28,
+            targetSdkVersion : 28,
 
-          kotlinVersion    : '1.4.0-rc',
-          dagger           : '2.13'
+            androidX         : '1.1.0',
+            kotlinVersion    : '1.4.0-rc',
+            dagger           : '2.13'
     ]
 
     libraries = [
-          kotlin        : "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$versions.kotlinVersion",
-          appCompat     : 'com.android.support:appcompat-v7:26.1.0',
-          dagger        : "com.google.dagger:dagger:$versions.dagger",
-          daggerCompiler: "com.google.dagger:dagger-compiler:$versions.dagger"
+            kotlin        : "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$versions.kotlinVersion",
+            appCompat     : "androidx.appcompat:appcompat:$versions.androidX",
+            recyclerView  : "androidx.recyclerview:recyclerview:$versions.androidX",
+            dagger        : "com.google.dagger:dagger:$versions.dagger",
+            daggerCompiler: "com.google.dagger:dagger-compiler:$versions.dagger"
     ]
 }
