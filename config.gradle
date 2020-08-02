@@ -1,6 +1,7 @@
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-kapt'
+apply plugin: 'dagger.hilt.android.plugin'
 
 android {
     compileSdkVersion versions.compileSdkVersion
@@ -12,6 +13,11 @@ android {
         versionName "1.0"
     }
 
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
     sourceSets {
         main.java.srcDirs += 'src/main/kotlin'
         test.java.srcDirs += 'src/test/kotlin'
@@ -21,6 +27,8 @@ android {
 
 dependencies {
     kapt libraries.daggerCompiler
+    kapt libraries.hiltCompiler
+    implementation libraries.hilt
     implementation libraries.kotlin
     implementation libraries.appCompat
 }

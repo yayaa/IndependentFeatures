@@ -7,13 +7,15 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.yayandroid.independentfeatures.base.Feature
-import com.yayandroid.independentfeatures.base.SampleCoreLogger
+import com.yayandroid.independentfeatures.logger.SampleSharedLogger
+import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 
+@AndroidEntryPoint
 class MainActivity : AppCompatActivity(), FeatureAdapter.FeatureClickListener {
 
     @Inject lateinit var features: Set<Feature>
-    @Inject lateinit var sampleCoreLogger: SampleCoreLogger
+    @Inject lateinit var sampleSharedLogger: SampleSharedLogger
 
     private val featureAdapter = FeatureAdapter(this)
 
@@ -21,9 +23,7 @@ class MainActivity : AppCompatActivity(), FeatureAdapter.FeatureClickListener {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val mainComponent = getMainComponent()
-        mainComponent.inject(this)
-        sampleCoreLogger.logSelf()
+        sampleSharedLogger.logSelf()
 
         featureAdapter.setFeatures(features)
         findViewById<RecyclerView>(R.id.main_recycler).apply {
@@ -31,8 +31,6 @@ class MainActivity : AppCompatActivity(), FeatureAdapter.FeatureClickListener {
             layoutManager = LinearLayoutManager(this@MainActivity)
             adapter = featureAdapter
         }
-
-        sampleCoreLogger.string(mainComponent)
     }
 
     override fun onFeatureClick(feature: Feature) {

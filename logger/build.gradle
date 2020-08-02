@@ -4,5 +4,4 @@ apply from: '../config.gradle'
 
 dependencies {
     implementation project(":base")
-    implementation project(":logger")
 }

@@ -6,7 +6,8 @@ ext {
 
             androidX         : '1.1.0',
             kotlinVersion    : '1.4.0-rc',
-            dagger           : '2.13'
+            dagger           : '2.29.1',
+            hilt             : "2.29.1-alpha"
     ]
 
     libraries = [
@@ -14,6 +15,8 @@ ext {
             appCompat     : "androidx.appcompat:appcompat:$versions.androidX",
             recyclerView  : "androidx.recyclerview:recyclerview:$versions.androidX",
             dagger        : "com.google.dagger:dagger:$versions.dagger",
-            daggerCompiler: "com.google.dagger:dagger-compiler:$versions.dagger"
+            daggerCompiler: "com.google.dagger:dagger-compiler:$versions.dagger",
+            hilt          : "com.google.dagger:hilt-android:$versions.hilt",
+            hiltCompiler  : "com.google.dagger:hilt-android-compiler:$versions.hilt"
     ]
 }
