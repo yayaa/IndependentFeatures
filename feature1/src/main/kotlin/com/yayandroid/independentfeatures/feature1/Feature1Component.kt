@@ -1,26 +1,21 @@
 package com.yayandroid.independentfeatures.feature1
 
-import android.app.Activity
-import com.yayandroid.independentfeatures.base.BaseSampleApplication
-import com.yayandroid.independentfeatures.base.CoreApplicationComponent
-import com.yayandroid.independentfeatures.base.FeatureApplicationComponent
-import com.yayandroid.independentfeatures.base.SampleCoreComponent
-import dagger.Component
+import com.squareup.anvil.annotations.MergeComponent
 
 @Feature1Scope
-@Component(dependencies = [SampleCoreComponent::class])
-interface Feature1Component : FeatureApplicationComponent {
+@MergeComponent(
+        scope = Feature1Scope::class,
+        dependencies = [Feature1Dependencies::class]
+)
+interface Feature1Component {
 
     companion object {
-        fun create(coreApplicationComponent: CoreApplicationComponent): Feature1Component
-                = DaggerFeature1Component.builder()
-                .sampleCoreComponent(coreApplicationComponent as SampleCoreComponent)
-                .build()
+        fun create(feature1Dependencies: Feature1Dependencies): Feature1Component =
+                DaggerFeature1Component.builder()
+                        .feature1Dependencies(feature1Dependencies)
+                        .build()
     }
 
     fun inject(activity: Feature1Activity)
 
 }
-
-internal fun Activity.getApplicationComponent()
-        = (application as BaseSampleApplication).feature1ApplicationComponent() as Feature1Component

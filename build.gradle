@@ -7,10 +7,14 @@ buildscript {
     }
 
     apply from: 'dependencies.gradle'
+    ext {
+        kotlin_version = '1.3.72'
+    }
 
     dependencies {
         classpath 'com.android.tools.build:gradle:4.0.1'
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$versions.kotlinVersion"
+        classpath "com.squareup.anvil:gradle-plugin:$versions.anvil"
     }
 }
 

@@ -3,23 +3,25 @@ package com.yayandroid.independentfeatures.feature1
 import android.os.Bundle
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
-import com.yayandroid.independentfeatures.base.SampleCoreLogger
+import com.yayandroid.independentfeatures.logger.SampleSharedLogger
 import javax.inject.Inject
 
 class Feature1Activity : AppCompatActivity() {
 
-    @Inject lateinit var sampleCoreLogger: SampleCoreLogger
+    @Inject lateinit var sampleSharedLogger: SampleSharedLogger
+    @Inject lateinit var dependencyNeedToHaveApplicationLifecycle: DependencyNeedToHaveApplicationLifecycle
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_feature_1)
 
-        val feature1Component = getApplicationComponent()
+        val feature1Component = Feature1Component.create(getDependencies())
         feature1Component.inject(this)
-        sampleCoreLogger.logSelf()
+        sampleSharedLogger.logSelf()
+        dependencyNeedToHaveApplicationLifecycle.logApplication()
 
         findViewById<TextView>(R.id.sampleTextView).apply {
-            text = "Component: \n${sampleCoreLogger.string(feature1Component)}"
+            text = "Component: \n${sampleSharedLogger.string(feature1Component)}"
         }
     }
 }

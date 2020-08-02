@@ -6,7 +6,8 @@ ext {
 
             androidX         : '1.1.0',
             kotlinVersion    : '1.4.0-rc',
-            dagger           : '2.13'
+            dagger           : '2.13',
+            anvil            : '1.0.6',
     ]
 
     libraries = [
